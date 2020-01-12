@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+var bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 
@@ -20,6 +21,7 @@ mongoose
 // });
 
 //Middleware
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
